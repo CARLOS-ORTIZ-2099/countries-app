@@ -1,0 +1,14 @@
+.container {
+    text-align: center;
+}
+.container, .title-error, .prop-error{
+    margin-top: 2rem;
+}
+.container .title-error{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container .prop-error{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: tomato;
+    font-weight: bold;
+}

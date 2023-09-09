@@ -1,0 +1,25 @@
+.load-container {
+    margin-top: 10%;
+   /*  border: solid red 5px; */
+    text-align: center;
+    padding: 3rem;
+}
+
+@media screen and (max-width: 300px) {
+    .load-container {
+        margin-top: 40%;
+       /*  border: solid red 5px; */
+        text-align: center;
+        padding: 2rem;
+    }
+}
+
+
+@media screen  and (min-width:310px) and (max-width:750px){
+    .load-container {
+        margin-top: 43%;
+       /*  border: solid red 5px; */
+        text-align: center;
+        padding: 2rem;
+    }
+}

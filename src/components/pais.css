@@ -1,0 +1,157 @@
+.pais-container{
+    background-color: hsl(0, 0%, 98%);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Nunito Sans', sans-serif; ;
+}
+.child1{
+    flex: 1;
+    /* border: solid black 2px; */
+    height: 500px;
+}
+
+.child1 button{
+    margin-bottom: 2.2rem;
+    margin-left: 1.7rem;
+    width: 78px;
+    height: 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all ease-in-out .5s;
+}
+
+.child1 button:hover {
+    background-color: #1d6dd5;
+    color: aliceblue;
+    transition: .5s;
+    transform: scale(1.20);
+}
+
+.child1 img{
+    margin-left: 1.7rem;
+    height: 60%;
+}
+
+.child2{
+    flex: 1;
+   /*  border: solid blue 2px; */
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    height: 500px;
+}
+
+.texto{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+    
+}
+.texto h1{
+    color: black;
+}
+
+.enlaces{
+   /*  border: solid red 2px; */
+    padding: 1rem;
+    display: flex;
+}
+.enlaces a{
+    text-decoration: none;
+    margin-left: 15px;
+    /* border: solid black 2px; */
+    padding: .5rem;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .3);
+}
+
+.dark .texto h1{
+    color: aliceblue ;
+}
+.dark .enlaces a {
+    color: rgb(16, 116, 204);
+    box-shadow: 10px 0px 5px rgba(25, 63, 189, 0.3);
+}
+.dark .child2 h2,h3{
+    color: rgb(155, 157, 161);
+    font-weight: bold;
+}
+
+@media screen and (max-width:600px) {
+    .pais-container{
+       /*  background-color: rgb(214, 92, 61); */
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        font-size: 9px;
+        text-align: center;
+    }
+
+
+    .child1{
+        flex: 1;
+       /*  border: solid black 2px; */
+        height: 500px;
+        text-align: center;
+    }
+    
+    .child1 button{
+        margin-bottom: 2.2rem;
+        margin-left: 0;
+        width: 70px;
+        height: 25px;
+        border-radius: 5px;
+    
+    }
+    
+    .child1 img{
+        margin-left:0;
+        height: 10%;
+        width: 80%;
+    }
+
+    .child2{
+        height: 500px;
+        margin-top: 2rem;
+        padding: .8rem;
+       
+    }
+   
+
+    .enlaces{
+       /*  border: solid red 2px; */
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .enlaces a{
+      
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+    }
+
+}
+
+
+
+@media screen and (max-width:300px) {
+    
+    .child2{
+        height: 500px;
+        margin-top: 2rem;
+        padding: .3rem;
+        font-size: 10px;
+
+    }
+   
+
+    .enlaces{
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}
