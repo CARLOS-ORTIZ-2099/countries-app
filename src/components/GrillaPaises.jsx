@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useContext, useEffect, useState } from "react"
-import './grillaPaises.css'
+import './grilla-paises.css'
 import ThemeContext from "../context/ThemeContext"
 import { SearchFilter } from "./SearchFilter"
 import { LinkCountry } from "./LinkCountry"

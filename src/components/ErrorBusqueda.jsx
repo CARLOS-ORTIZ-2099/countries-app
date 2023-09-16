@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import './errorBusqueda.css'
+import './error-busqueda.css'
 import logoError from '../images/loaders/error-page-svgrepo-com.svg'
 
 export const ErrorBusqueda = ({error}) => {
