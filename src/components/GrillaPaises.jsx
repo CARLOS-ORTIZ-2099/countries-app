@@ -8,6 +8,7 @@ import { ChargingLoad } from "./ChargingLoad"
 
 export const GrillaPaises = () => {
   
+
 const {theme}  = useContext(ThemeContext)
 const [countries, setCountries] = useState([])
 const [error, setError] = useState(null)
@@ -25,7 +26,9 @@ async function petitionApi() {
         }
         let data = await response.json()
          console.log(data)
+         setError(null)
          setCountries(data)
+         
     }
     catch(error) {
         console.log(error)
@@ -35,6 +38,9 @@ async function petitionApi() {
 
 async function search(name) {
   try {
+    if (/[#&/?+.;\\]/.test(name)) {
+      throw "caracteres no permitidos";
+    }
     let response = await fetch(`${API_URL}/name/${name}`)
     let data = await response.json()
     console.log(data)
@@ -54,8 +60,9 @@ async function search(name) {
 let searchCountries = (e) => {
     let target = e.target.value
     console.log(target)
-    if(target.length<=0){
+    if(target.length===0){
         petitionApi()
+        console.log('entro')
     }else{    
      search(target.toLowerCase())
     }
