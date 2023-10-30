@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import {Link} from 'react-router-dom'
-import { ErrorBusqueda } from './ErrorBusqueda'
+import { ErrorBusqueda } from '../error-busqueda/ErrorBusqueda'
+
 
 export const LinkCountry = ({error, countries}) => {
 

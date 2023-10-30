@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useContext, useEffect, useState } from "react"
 import './grilla-paises.css'
-import ThemeContext from "../context/ThemeContext"
-import { SearchFilter } from "./SearchFilter"
-import { LinkCountry } from "./LinkCountry"
-import { ChargingLoad } from "./ChargingLoad"
+import ThemeContext from "../../context/ThemeContext"
+import { SearchFilter } from "../../components/search-filter/SearchFilter"
+import { ChargingLoad } from "../../components/charging-load/ChargingLoad"
+import { LinkCountry } from "../../components/link-country/LinkCountry"
 
 export const GrillaPaises = () => {
   
@@ -83,7 +83,7 @@ const select = (e) => {
     }
 }
 
-if(!countries){
+if(countries.length < 1){
     return <ChargingLoad/>
 }
 

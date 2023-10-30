@@ -1,10 +1,11 @@
-import { GrillaPaises } from "./components/GrillaPaises"
+import { GrillaPaises } from './pages/grilla-paises/GrillaPaises'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import { Pais } from "./components/Pais"
-import { PaisAux } from "./components/PaisAux"
-import { Header } from "./components/Header"
+import { Header } from "./components/header/Header"
 import { Error } from "./pages/Error"
 import { ThemeProvider } from "./context/ThemeContext"
+import { Pais } from './pages/pais/Pais'
+import { PaisAux } from './pages/pais-aux/PaisAux'
+
 
 
 function App() {

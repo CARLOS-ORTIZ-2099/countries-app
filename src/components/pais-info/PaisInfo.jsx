@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable react/prop-types */
 import {Link} from 'react-router-dom'
-import { DatosPais } from './pais-info-template/DatosPais'
+import { DatosPais } from '../pais-info-template/DatosPais'
 
 export const PaisInfo = ({nameCountrie, backHome}) => {
 

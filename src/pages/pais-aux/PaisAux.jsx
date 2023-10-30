@@ -1,41 +1,39 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import { useContext, useEffect, useState } from "react"
-import { Link, useNavigate, useParams } from "react-router-dom"
-import './pais.css'
-import ThemeContext from "../context/ThemeContext"
-import { ChargingLoad } from "./ChargingLoad"
-import { PaisInfo } from "./PaisInfo"
+import { useNavigate, useParams } from "react-router-dom"
+import ThemeContext from "../../context/ThemeContext"
+import { PaisInfo } from "../../components/pais-info/PaisInfo"
+import { ChargingLoad } from "../../components/charging-load/ChargingLoad"
 
-export const Pais = () => {
-    
-const [nameCountrie, setNameCountrie] = useState('')    
-const {name} = useParams()
+export const PaisAux = () => {
+const [nameCountrie, setNameCountrie] = useState('')
+const {dato} = useParams()
 const {theme}  = useContext(ThemeContext)
 let API_URL = import.meta.env.VITE_API_URL
 const navigate = useNavigate()
 
 useEffect(() => {
-    namePetition(API_URL)
-}, [name])
+    countryFrontier()
+}, [dato])
 
-async function namePetition(api) {
-    try {
-        let response = await fetch(`${api}/name/${name}?fullText=true`)
+async function countryFrontier() {
+    try{
+        let response = await fetch(`${API_URL}/alpha/${dato}`)
         if(response.ok!== true){
-            throw 'data inexistente'
+            throw 'data invalida'
         }
         let [data] = await response.json()
         console.log(data)
         setNameCountrie(data)
     }
-    catch(error) {
+    catch(error){
         console.log(error)
     }
 }
 
 const backHome = () => {
-    navigate('/')
+    navigate(-1)
 }
 
 if(!nameCountrie){
@@ -43,8 +41,10 @@ if(!nameCountrie){
 }
 
   return (
+    <>  
         <div className={`pais-container ${theme}`}>
             <PaisInfo backHome={backHome} nameCountrie={nameCountrie}/>
-        </div>  
+        </div>    
+    </>
   )
 }

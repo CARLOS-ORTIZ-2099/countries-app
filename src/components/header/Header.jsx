@@ -2,7 +2,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faMoon, faSun} from '@fortawesome/free-regular-svg-icons'
 import { useContext } from 'react'
 import './header.css'
-import ThemeContext from '../context/ThemeContext'
+import ThemeContext from '../../context/ThemeContext'
 
 export const Header = () => {
 

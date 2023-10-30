@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import { useContext } from "react"
-import ThemeContext from "../context/ThemeContext"
+import ThemeContext from "../../context/ThemeContext"
 
 
 export const SearchFilter = ({searchCountries,select}) => {
