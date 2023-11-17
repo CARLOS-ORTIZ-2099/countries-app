@@ -9,7 +9,7 @@ export const ErrorBusqueda = ({error}) => {
 
 
   return (
-    <div className="continer">
+    <div className="container-error">
       <h1 className="title-error">Error De Busqueda</h1>
         <h2 className="prop-error">{error}</h2>
         <hr/>

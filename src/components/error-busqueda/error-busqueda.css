@@ -1,5 +1,6 @@
 .container {
     text-align: center;
+    min-height: 100vh;
 }
 .container, .title-error, .prop-error{
     margin-top: 2rem;
@@ -12,3 +13,4 @@
     color: tomato;
     font-weight: bold;
 }
+
