@@ -19,17 +19,16 @@ export const PaisInfo = ({nameCountrie, backHome}) => {
             <div className="child2">
                 <DatosPais nameCountrie={nameCountrie}/>
           
-
                <div className="enlaces"> 
                     <h1>Border Countries: </h1>
                    {
                     nameCountrie.borders ? (
-                           
-                           nameCountrie.borders.map(ele => (
+                        <div style={{display:'flex', flexWrap:'wrap'}}>   
+                           {nameCountrie.borders.map(ele => (
                                     <Link key={ele} to={`/pais/${ele}`} >{ele}</Link>
                                     
-                            ))
-                                      
+                            ))}
+                        </div>            
                     ):
                     (
                         <>
