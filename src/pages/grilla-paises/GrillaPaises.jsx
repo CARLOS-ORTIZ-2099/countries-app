@@ -27,33 +27,32 @@ async function petitionApi() {
         let data = await response.json()
          console.log(data)
          setError(null)
-         setCountries(data)
-         
+         setCountries(data)      
     }
     catch(error) {
         console.log(error)
-    }
-   
+    }  
 }
 
 async function search(name) {
   try {
     if (/[#&/?+.;\\]/.test(name)) {
-      throw "caracteres no permitidos";
+      throw new Error("caracteres no permitidos");
     }
     let response = await fetch(`${API_URL}/name/${name}`)
-    let data = await response.json()
-    console.log(data)
-    if(data.status >=400){
-      const {message} = data
-      throw `${message}`
+    if(response.ok!== true){
+      let error = new Error('el pais que buscas no existe')
+      error.stattus = response.status || '000'
+      error.statusText = response.statusText || 'error en la consulta'
+      throw error
     }
+    let data = await response.json()
     setCountries(data)
     setError(null)
   }
   catch(error){
-        console.log('mensaje de error:'+ ' '+ error)
-        setError('mensaje de error:'+ ' '+ error)
+        console.log(error)
+        setError(error)
   }
 }
 
@@ -76,6 +75,7 @@ async function region(continente) {
 }
 
 const select = (e) => {
+    error ? setError(null) : ''
     let option = e.target.value
     console.log(option)
     if(option !== 'filtrado') {

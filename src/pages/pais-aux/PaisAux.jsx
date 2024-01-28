@@ -4,6 +4,7 @@ import ThemeContext from "../../context/ThemeContext"
 import { PaisInfo } from "../../components/pais-info/PaisInfo"
 import { ChargingLoad } from "../../components/charging-load/ChargingLoad"
 import { usePetition } from "../../hooks/usePetition"
+import { ErrorBusqueda } from "../../components/error-busqueda/ErrorBusqueda"
 
 export const PaisAux = () => {
 
@@ -12,11 +13,17 @@ const {theme}  = useContext(ThemeContext)
 const navigate = useNavigate()
 let API_URL = import.meta.env.VITE_API_URL
 const url = `${API_URL}/alpha/${dato}`
-const {nameCountrie} = usePetition(dato, url)
+const {nameCountrie, error} = usePetition(dato, url)
 
 const backHome = () => navigate(-1)
 
-if(!nameCountrie){
+
+if(error){
+  return <ErrorBusqueda error={error}/>
+}
+
+
+else if(!nameCountrie){
     return <ChargingLoad/>
 }
 

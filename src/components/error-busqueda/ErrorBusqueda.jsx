@@ -11,7 +11,9 @@ export const ErrorBusqueda = ({error}) => {
   return (
     <div className="container-error">
       <h1 className="title-error">Error De Busqueda</h1>
-        <h2 className="prop-error">{error}</h2>
+        <h2 className="prop-error">{error.message}</h2>
+        <h2 className="prop-error">{error.stattus}</h2>
+        <h2 className="prop-error">{error.statusText}</h2>
         <hr/>
         <img style={{width:'70%' , marginTop:'2rem',}} src={logoError} alt="" /> 
         

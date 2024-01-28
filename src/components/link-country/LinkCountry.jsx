@@ -9,7 +9,7 @@ export const LinkCountry = ({error, countries}) => {
     <>
 
         {   
-             error ?(<ErrorBusqueda error = {error}/>):
+            error ?(<ErrorBusqueda error = {error}/>):
 
             (countries.map(countrie => (
               <Link className="card" to={`/${countrie.name.common}`} key={countrie.name.common}>  

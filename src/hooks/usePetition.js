@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-
 import { useState } from "react"
 import { useEffect } from "react"
 
 export const usePetition = (name, url) => {
     const [nameCountrie, setNameCountrie] = useState('')  
+    const [error, setError] = useState(null)
 
     useEffect(() => {
         namePetition(url)
@@ -14,7 +14,10 @@ export const usePetition = (name, url) => {
         try {
             let response = await fetch(url)
             if(response.ok!== true){
-                throw 'data inexistente'
+                let error = new Error('data inexistente')
+                error.stattus = response.status || '000'
+                error.statusText = response.statusText || 'error en la consulta'
+                throw error
             }
             let [data] = await response.json()
             console.log(data)
@@ -22,9 +25,10 @@ export const usePetition = (name, url) => {
         }
         catch(error) {
             console.log(error)
+            setError(error)
         }
     }
 
-    return {nameCountrie}
+    return {nameCountrie, error}
 
 }
