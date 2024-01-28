@@ -1,6 +1,12 @@
-.container {
+
+.container-error{
+   /*  border: solid blue 2px; */
+    width: 80%;
+    margin: auto;
     text-align: center;
-    min-height: 100vh;
+}
+.container-error img{
+    width: 200px;
 }
 .container, .title-error, .prop-error{
     margin-top: 2rem;

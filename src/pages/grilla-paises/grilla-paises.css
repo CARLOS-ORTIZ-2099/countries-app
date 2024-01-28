@@ -13,7 +13,9 @@ a{
     gap: 1.8rem;
     justify-content: center;
     align-items: center;
-    background-color: hsl(0, 0%, 98%)
+    background-color: hsl(0, 0%, 98%);
+    text-align: center;
+    min-height: 100vh;
 }
 
 .card {
