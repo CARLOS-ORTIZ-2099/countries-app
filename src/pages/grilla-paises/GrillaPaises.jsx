@@ -57,7 +57,7 @@ async function search(name) {
   }
 }
 
-let searchCountries = (e) => {
+const searchCountries = (e) => {
     let target = e.target.value
     console.log(target)
     if(target.length===0){
