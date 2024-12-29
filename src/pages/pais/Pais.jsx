@@ -1,36 +1,31 @@
-import { useContext } from "react"
-import { useNavigate, useParams } from "react-router-dom"
-import './pais.css'
-import ThemeContext from "../../context/ThemeContext"
-import { ChargingLoad } from "../../components/charging-load/ChargingLoad"
-import { PaisInfo } from "../../components/pais-info/PaisInfo"
-import { usePetition } from "../../hooks/usePetition"
-import { ErrorBusqueda } from "../../components/error-busqueda/ErrorBusqueda"
-
+import { useContext } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import "./pais.css";
+import ThemeContext from "../../context/ThemeContext";
+import { ChargingLoad } from "../../components/charging-load/ChargingLoad";
+import { PaisInfo } from "../../components/pais-info/PaisInfo";
+import { usePetition } from "../../hooks/usePetition";
+import { ErrorBusqueda } from "../../components/error-busqueda/ErrorBusqueda";
 
 export const Pais = () => {
-       
-const {name} = useParams()
-const {theme}  = useContext(ThemeContext)
-const navigate = useNavigate()
-let API_URL = import.meta.env.VITE_API_URL
-const url = `${API_URL}/name/${name}?fullText=true`
-const {nameCountrie, error} = usePetition(name, url)
+  const { name } = useParams();
+  const { theme } = useContext(ThemeContext);
+  const navigate = useNavigate();
+  let API_URL = import.meta.env.VITE_API_URL;
+  const url = `${API_URL}/name/${name}?fullText=true`;
+  const { nameCountrie, error } = usePetition(name, url);
 
-const backHome = () => navigate('/')
+  const backHome = () => navigate("/");
 
-if(error){
-  return <ErrorBusqueda error={error}/>
-}
-
-else if(!nameCountrie){
-    return <ChargingLoad/>
-}
-
+  if (error) {
+    return <ErrorBusqueda error={error} />;
+  } else if (!nameCountrie) {
+    return <ChargingLoad />;
+  }
 
   return (
-        <div className={`pais-container ${theme}`}>
-            <PaisInfo backHome={backHome} nameCountrie={nameCountrie}/>
-        </div>  
-  )
-}
+    <div className={`pais-container ${theme}`}>
+      <PaisInfo backHome={backHome} nameCountrie={nameCountrie} />
+    </div>
+  );
+};
