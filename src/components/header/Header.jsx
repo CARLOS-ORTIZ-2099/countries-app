@@ -1,5 +1,3 @@
-/* import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons"; */
 import sun from "../../assets/icons/sun-regular.svg";
 import moon from "../../assets/icons/moon-regular.svg";
 import { useContext } from "react";
